@@ -1,0 +1,22 @@
+﻿@page "/"
+
+Welcome to your new app.
+
+<DraggableList ListData="testList" Context="foo">
+    <ListItemTemplate>
+        <div style="background-color:yellow;">
+            <p>@foo.Id</p>
+            <p>@foo.Name</p>
+        </div>
+    </ListItemTemplate>
+</DraggableList>
+
+@code{
+    List<Foo> testList = new List<Foo> { new Foo { Id = 1, Name = "Alex" }, new Foo { Id = 2, Name = "James" }, new Foo { Id = 3, Name = "Riley" } };
+    public class Foo
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+    }
+}
+
